@@ -52,7 +52,7 @@ export function functionalMapNumbersIntoStrings(numbers) {
 }
 
 export function printType(variable) {
-    return typeof(variable);
+    console.log(typeof(variable));
 }   
 
 export function isPalindrome(word) {
@@ -60,7 +60,9 @@ export function isPalindrome(word) {
         return false;
     }
 
-    return word.toLowerCase().split("").reverse().join("") == word.toLowerCase();    
+    normalizedWord = word.toLowerCase().split(" ").join("");
+
+    return normalizedWord.split("").reverse().join("") === normalizedWord;    
 }
 
 export class Person {
