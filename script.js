@@ -60,7 +60,7 @@ export function isPalindrome(word) {
         return false;
     }
 
-    const normalizedWord = word.toLowerCase().split(" ").join("");
+    const normalizedWord = word.toLowerCase().replace(/\W/g,'');
 
     return normalizedWord.split("").reverse().join("") === normalizedWord;    
 }
