@@ -6,7 +6,9 @@ import {
     mapNumbersIntoStrings,
     functionalMapNumbersIntoStrings,
     printType,
-    isPalindrome
+    isPalindrome,
+    Person,
+    printOutPersonAge
 } from './script.js'
 
 describe('generateRandomColor', () => {
@@ -87,9 +89,25 @@ describe('mapNumbersIntoStrings', () => {
         });
 });
 
-/*describe('printType'. () => {
-
-});*/
+describe('printType', () => {
+    const spy = jest.spyOn(console, 'log');
+    
+    it('should print something in console', () => {
+        console.log(spy.mock);
+        printType(1);
+        expect(spy).toBeCalled();
+        spy.mockClear();
+    });
+    it('should print the type of a variable', () => {
+        const variables = [undefined, 3.4, "hola", function(){}, [2, 3, 4]];
+        const types = ['undefined', 'number', 'string', 'function', 'object'];
+        for (const index in variables) {
+            printType(variables[index]);
+            expect(spy).toBeCalledWith(types[index]);
+            spy.mockClear();
+        }   
+    })
+});
 
 describe('isPalindrome', () => {
     it("should be true with empty strings and single letter or number", 
@@ -98,14 +116,50 @@ describe('isPalindrome', () => {
         expect(isPalindrome("t")).toBeTruthy();
     }); 
     it("should work only with numbers and letters" , () => {
-        expect(isPalindrome("1aniTa//* #la4v4a{}] ]la +tina1"))
+        expect(isPalindrome("1A//* #man{}] ]a +plan a canal: Panama1"))
             .toBeTruthy();
     });
     it("should be no case-sensitive" , () => {
-        expect(isPalindrome("ANITA"))
+        expect(isPalindrome("Ten aNimaLs I slaM in a nEt"))
             .toBeTruthy();
     });
-    it('should be false with a no palindrome word', () => {
-        expect(isPalindrome(""))
+    it('should be false with a no palindrome word or phrase', () => {
+        expect(isPalindrome("I am not a palindrome phrase")).toBeFalsy();
+        expect(isPalindrome("Nothing")).toBeFalsy();
+    });
+});
+
+describe('Person', () => {
+    const person = new Person("Jhon", 25);
+    const spy = jest.spyOn(console, 'log');    
+
+    it("should be able to create a person with name and age", () => {
+        for (const key in person) {
+            expect(person[key]).toBeDefined();
+        }
+    });
+    it('should print in console when Person.printName() is called', 
+    () => {
+        person.printName();
+        expect(spy).toBeCalled();
+        spy.mockClear();
+    });
+    it('should print the name of the person in console when Person.printName() is called', 
+    () => {
+        person.printName();
+        expect(spy).toBeCalledWith('Jhon')
+        spy.mockClear();
+    });
+    it('should print in console when printOutPersonAge() is called', 
+    () => {
+        printOutPersonAge(person);
+        expect(spy).toBeCalledWith(25)
+        spy.mockClear();
+    });
+    it('should print person age in console when printOutPersonAge() is called', 
+    () => {
+        printOutPersonAge(person);
+        expect(spy).toBeCalledWith(25);
+        spy.mockClear();
     });
 });

@@ -29,10 +29,6 @@ export function mapNumbersIntoStrings(numbers) {
 }
 
 export function functionalMapNumbersIntoStrings(numbers) {
-    if (typeof(numbers) === 'undefined') {
-        return [];
-    }
-
     return numbers.map(String);
 }
 
@@ -41,12 +37,7 @@ export function printType(variable) {
 }   
 
 export function isPalindrome(word) {
-    function normalizeWord(word) {
-        return word.replace(/\W/g,'')
-                .toLowerCase()
-                .replace(/[aeiouáéíóú]/g, '-')
-    }
-    const normalizedWord = word.toLowerCase().replace(/\W/g,'');
+    const normalizedWord = word.toLowerCase().replace(/[\W_]/g,'');
 
     return normalizedWord.split("").reverse().join("") === normalizedWord;    
 }
