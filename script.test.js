@@ -29,7 +29,7 @@ describe('generateRandomColor', () => {
     });
     it('should have Integer values', () => {
         for (const key of KEYS) {    
-            expect(parseInt(color[key]) === color[key]).toBeTruthy();
+            expect(Number.isInteger(color[key])).toBeTruthy();
         }
     });
 });
