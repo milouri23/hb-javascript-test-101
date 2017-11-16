@@ -17,9 +17,7 @@ export function filterNegativeNumbers(numbers) {
 }
 
 export function functionalFilterNegativeNumbers(numbers) {
-    return numbers.filter(function(number) {
-        return number >= 0;
-    });
+    return numbers.filter(number => number >= 0)
 }
 
 export function mapNumbersIntoStrings(numbers) {
@@ -43,6 +41,11 @@ export function printType(variable) {
 }   
 
 export function isPalindrome(word) {
+    function normalizeWord(word) {
+        return word.replace(/\W/g,'')
+                .toLowerCase()
+                .replace(/[aeiouáéíóú]/g, '-')
+    }
     const normalizedWord = word.toLowerCase().replace(/\W/g,'');
 
     return normalizedWord.split("").reverse().join("") === normalizedWord;    
