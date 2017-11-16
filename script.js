@@ -21,11 +21,11 @@ export function functionalFilterNegativeNumbers(numbers) {
 }
 
 export function mapNumbersIntoStrings(numbers) {
-    const stringOfNumbers = [];
+    const numbersInStringFormat = [];
     for (const number of numbers) {
-        stringOfNumbers.push(String(number)); 
+        numbersInStringFormat.push(String(number)); 
     }
-    return stringOfNumbers;
+    return numbersInStringFormat;
 }
 
 export function functionalMapNumbersIntoStrings(numbers) {
@@ -33,12 +33,11 @@ export function functionalMapNumbersIntoStrings(numbers) {
 }
 
 export function printType(variable) {
-    console.log(typeof(variable));
+    console.log(typeof variable);
 }   
 
 export function isPalindrome(word) {
     const normalizedWord = word.toLowerCase().replace(/[\W_]/g,'');
-
     return normalizedWord.split("").reverse().join("") === normalizedWord;    
 }
 
