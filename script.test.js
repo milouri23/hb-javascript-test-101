@@ -85,7 +85,7 @@ describe('isPalindrome', () => {
         expect(isPalindrome("t")).toBeTruthy();
     }); 
     it("should work only with numbers and letters" , () => {
-        expect(isPalindrome("1A//* #man{}] ]a +plan a canal: Panama1")).toBeTruthy();
+        expect(isPalindrome("1a//* #man{}] ]a +plan a canal: panama1")).toBeTruthy();
     });
     it("should be no case-sensitive" , () => {
         expect(isPalindrome("Ten aNimaLs I slaM in a nEt")).toBeTruthy();
