@@ -27,15 +27,16 @@ describe( 'generateRandomColor', () => {
         }
     });
     it( 'should have Integer values', () => {
-        for (const key of KEYS)
+        for (const key of KEYS) {
             expect( Number.isInteger( color[key] ) ).toBeTruthy();
+        }
     });
 });
 
 describe( 'filterNegativeNumbers', () => {
     it( 'should return empty array if an empty array is given', () => {
-        expect( filterNegativeNumbers( [] ) ).toEqual([]);
-        expect( functionalFilterNegativeNumbers([])).toEqual([]);      
+        expect( filterNegativeNumbers( [] ) ).toEqual( [] );
+        expect( functionalFilterNegativeNumbers([])).toEqual( [] );      
     });
     it( 'should return empty array if an array of negative numbers is given', () => {
         const negativeNumbers = [-3, -4, -8, -2, -6, -7];
@@ -49,8 +50,9 @@ describe( 'filterNegativeNumbers', () => {
     });
     it( 'should return the no negative numbers of the given array', () => {
         const numbers = [3, -3, 6, 8, -6, -8, 0];
-        expect( filterNegativeNumbers( numbers ) ).toEqual( [3, 6, 8, 0] );
-        expect( functionalFilterNegativeNumbers( numbers ) ).toEqual( [3, 6, 8, 0] );
+        const filteredNumbers = [3, 6, 8, 0]
+        expect( filterNegativeNumbers( numbers ) ).toEqual( filteredNumbers );
+        expect( functionalFilterNegativeNumbers( numbers ) ).toEqual( filteredNumbers );
     });
 });
 
@@ -60,8 +62,10 @@ describe( 'mapNumbersIntoStrings', () => {
         expect( functionalMapNumbersIntoStrings( [] ) ).toEqual( [] );
     });
     it( 'should return number elements in the array as string elements', () => {
-        expect( mapNumbersIntoStrings( [3, 2, 4.5, 8.2, 0] ) ).toEqual( ['3', '2', '4.5', '8.2', '0'] );
-        expect( functionalMapNumbersIntoStrings( [3, 2, 4.5, 8.2, 0] ) ).toEqual( ['3', '2', '4.5', '8.2', '0'] );
+        const numbersArray = [3, 2, 4.5, 8.2, 0];
+        const stringsArray = ['3', '2', '4.5', '8.2', '0'];
+        expect( mapNumbersIntoStrings( numbersArray ) ).toEqual( stringsArray );
+        expect( functionalMapNumbersIntoStrings( numbersArray ) ).toEqual( stringsArray );
     });
 });
 
