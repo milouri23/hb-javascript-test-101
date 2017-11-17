@@ -108,8 +108,9 @@ describe( 'Person', () => {
 
     beforeEach( () => spy.mockClear() );
     it( 'should be able to create a person with name and age', () => {
-        for (const key in person)
+        for (const key in person) {
             expect( person[key] ).toBeDefined();
+        }
     });
     it( 'should print the name of the person in console when Person.printName() is called', () => {
         person.printName();
