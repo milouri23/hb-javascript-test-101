@@ -1,20 +1,10 @@
 # hb-javascript-test-101
+[![Travis](https://img.shields.io/travis/milouri23/hb-javascript-test-101.svg)](https://travis-ci.org/milouri23/hb-javascript-test-101)
+[![Codecov](https://codecov.io/gh/milouri23/hb-javascript-test-101/branch/master/graph/badge.svg)](https://codecov.io/gh/milouri23/hb-javascript-test-101)
 Javascript basic exercises to practice functional programming
 
-# HUGE - Bootcamp Test
+# HUGE - JavaScript Exercises
 _______________________________________________________________________________________________________
-Please resolve all the exercises using all the resources you can get. Using the internet and asking others is allowed. 
-
-## HTML and CSS
-Implement the given layout using valid HTML and CSS that can run in the latest version of Google Chrome.
-- Use semantic HTML
-- Use media queries to implement a simple layout for the small viewport.
-- Use best practices where the layout is liquid / responsive.
-- Choose the colors you want.
-- Use the right units and measures.	
-- The bar at the top should always be there, even if the user scroll down.
-
-## Javascript
 - Create a function that is capable of generate a random RGB color object.
 ```
 generateRandomNumber();
