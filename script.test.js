@@ -75,7 +75,7 @@ describe( 'printType', () => {
             printType( VARIABLES[index] );
             expect( spy ).toBeCalledWith( TYPES[index] );
         }
-    })
+    });
 });
 
 describe( 'isPalindrome', () => {
@@ -97,7 +97,7 @@ describe( 'isPalindrome', () => {
 
 describe( 'Person', () => {
     const [NAME, AGE] = ["Jhon", 25];
-    const person = new Person(NAME, AGE);
+    const person = new Person( NAME, AGE );
     const spy = jest.spyOn ( console, 'log' );
 
     beforeEach( () => spy.mockClear() );
