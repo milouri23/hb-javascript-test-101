@@ -6,7 +6,7 @@ export function generateRandomColor() {
     };
 }
 
-export function filterNegativeNumbers( numbers ) {
+export function filterNegativeNumbers(numbers) {
     const noNegativeNumbers = [];
     for (const number of numbers) {
         if (number >= 0) {
@@ -16,11 +16,11 @@ export function filterNegativeNumbers( numbers ) {
     return noNegativeNumbers;
 }
 
-export function functionalFilterNegativeNumbers( numbers ) {
+export function functionalFilterNegativeNumbers(numbers) {
     return numbers.filter( number => number >= 0 )
 }
 
-export function mapNumbersIntoStrings( numbers ) {
+export function mapNumbersIntoStrings(numbers) {
     const numbersInStringFormat = [];
     for (const number of numbers) {
         numbersInStringFormat.push( String(number) );
@@ -28,7 +28,7 @@ export function mapNumbersIntoStrings( numbers ) {
     return numbersInStringFormat;
 }
 
-export function functionalMapNumbersIntoStrings( numbers ) {
+export function functionalMapNumbersIntoStrings(numbers) {
     return numbers.map( String );
 }
 
@@ -36,7 +36,7 @@ export function printType( variable ) {
     console.log( typeof variable );
 }   
 
-export function isPalindrome( word ) {
+export function isPalindrome(word) {
     const normalizedWord = word.toLowerCase().replace( /[\W_]/g, '' );
     return normalizedWord.split( '' ).reverse().join( '' ) === normalizedWord;    
 }
@@ -52,6 +52,6 @@ export class Person {
     }
 }
 
-export function printOutPersonAge( person ) {
+export function printOutPersonAge(person) {
     console.log( person.age );
 }

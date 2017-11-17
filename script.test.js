@@ -68,8 +68,8 @@ describe( 'printType', () => {
 
     beforeEach( () => spy.mockClear() );
     it( 'should print the type of a variable', () => {
-        const VARIABLES = [undefined, 3.4, 'hola', function(){}, [2, 3, 4]];
-        const TYPES = ['undefined', 'number', 'string', 'function', 'object'];
+        const VARIABLES = [undefined, 3.4, 'hola', function(){}, [2, 3, 4], true];
+        const TYPES = ['undefined', 'number', 'string', 'function', 'object', 'boolean'];
 
         for (const index in VARIABLES) {
             printType( VARIABLES[index] );
