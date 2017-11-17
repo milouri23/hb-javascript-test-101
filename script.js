@@ -8,11 +8,8 @@ export function generateRandomColor() {
 
 export function filterNegativeNumbers(numbers) {
     const noNegativeNumbers = [];
-    for (const number of numbers) {
-        if (number >= 0) {
-            noNegativeNumbers.push( number );
-        }
-    }
+    for (const number of numbers)
+        (number >= 0) && noNegativeNumbers.push( number );
     return noNegativeNumbers;
 }
 
@@ -21,11 +18,10 @@ export function functionalFilterNegativeNumbers(numbers) {
 }
 
 export function mapNumbersIntoStrings(numbers) {
-    const numbersInStringFormat = [];
-    for (const number of numbers) {
-        numbersInStringFormat.push( String(number) );
-    }
-    return numbersInStringFormat;
+    const numbersInStringType = [];
+    for (const number of numbers)
+        numbersInStringType.push( String(number) );
+    return numbersInStringType;
 }
 
 export function functionalMapNumbersIntoStrings(numbers) {
@@ -42,16 +38,8 @@ export function isPalindrome(word) {
 }
 
 export class Person {
-    constructor( name, age ) {
-        this.name = name;
-        this.age = age;
-    }
-
-    printName() {
-        console.log( this.name );
-    }
+    constructor(name, age) { [this.name, this.age] = [name, age] }
+    printName() { console.log( this.name ); }
 }
 
-export function printOutPersonAge(person) {
-    console.log( person.age );
-}
+export function printOutPersonAge(person) { console.log( person.age ); }

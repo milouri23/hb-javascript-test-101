@@ -27,9 +27,8 @@ describe( 'generateRandomColor', () => {
         }
     });
     it( 'should have Integer values', () => {
-        for (const key of KEYS) {
+        for (const key of KEYS)
             expect( Number.isInteger( color[key] ) ).toBeTruthy();
-        }
     });
 });
 
@@ -39,16 +38,19 @@ describe( 'filterNegativeNumbers', () => {
         expect( functionalFilterNegativeNumbers([])).toEqual([]);      
     });
     it( 'should return empty array if an array of negative numbers is given', () => {
-        expect( filterNegativeNumbers( [-3, -4, -8, -2, -6, -7] ) ).toEqual( [] );
-        expect( functionalFilterNegativeNumbers( [-3, -4, -8, -2, -6, -7] ) ).toEqual( [] );
+        const negativeNumbers = [-3, -4, -8, -2, -6, -7];
+        expect( filterNegativeNumbers( negativeNumbers ) ).toEqual( [] );
+        expect( functionalFilterNegativeNumbers( negativeNumbers ) ).toEqual( [] );
     });
     it( 'should return the full array if an array of no negative numbers is given', () => {
-        expect( filterNegativeNumbers( [0, 2, 5, 7, 4, 3, 8, 9] ) ).toEqual( [0, 2, 5, 7, 4, 3, 8, 9] );
-        expect( functionalFilterNegativeNumbers( [0, 2, 5, 7, 4, 3, 8, 9] ) ).toEqual( [0, 2, 5, 7, 4, 3, 8, 9] )
+        const noNegativeNumbers = [0, 2, 5, 7, 4, 3, 8, 9];
+        expect( filterNegativeNumbers( noNegativeNumbers ) ).toEqual( noNegativeNumbers );
+        expect( functionalFilterNegativeNumbers( noNegativeNumbers ) ).toEqual( noNegativeNumbers )
     });
     it( 'should return the no negative numbers of the given array', () => {
-        expect( filterNegativeNumbers( [3, -3, 6, 8, -6, -8, 0] ) ).toEqual( [3, 6, 8, 0] );
-        expect( functionalFilterNegativeNumbers( [3, -3, 6, 8, -6, -8, 0] ) ).toEqual( [3, 6, 8, 0] );
+        const numbers = [3, -3, 6, 8, -6, -8, 0];
+        expect( filterNegativeNumbers( numbers ) ).toEqual( [3, 6, 8, 0] );
+        expect( functionalFilterNegativeNumbers( numbers ) ).toEqual( [3, 6, 8, 0] );
     });
 });
 
@@ -102,9 +104,8 @@ describe( 'Person', () => {
 
     beforeEach( () => spy.mockClear() );
     it( 'should be able to create a person with name and age', () => {
-        for (const key in person) {
+        for (const key in person)
             expect( person[key] ).toBeDefined();
-        }
     });
     it( 'should print the name of the person in console when Person.printName() is called', () => {
         person.printName();
