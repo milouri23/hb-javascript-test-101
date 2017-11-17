@@ -1,6 +1,7 @@
 # hb-javascript-test-101
 [![Travis](https://img.shields.io/travis/milouri23/hb-javascript-test-101.svg)](https://travis-ci.org/milouri23/hb-javascript-test-101)
 [![Codecov](https://codecov.io/gh/milouri23/hb-javascript-test-101/branch/master/graph/badge.svg)](https://codecov.io/gh/milouri23/hb-javascript-test-101)
+
 Javascript basic exercises to practice functional programming
 
 # HUGE - JavaScript Exercises
